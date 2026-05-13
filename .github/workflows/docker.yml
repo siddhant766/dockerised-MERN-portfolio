@@ -20,23 +20,23 @@ jobs:
       - name: Login DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.siddhantpatel766 }}
-          password: ${{ secrets.$Iddhant6395 }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build frontend
-        run: docker build -t ${{ secrets.siddhantpatel766 }}/portfolio-frontend ./frontend
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend ./frontend
 
       - name: Build backend
-        run: docker build -t ${{ secrets.siddhantpatel766 }}/portfolio-backend ./backend
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio-backend ./backend
 
       - name: Build admin
-        run: docker build -t ${{ secrets.siddhantpatel766 }}/portfolio-admin ./admin
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio-admin ./admin
 
       - name: Push frontend
-        run: docker push ${{ secrets.siddhantpatel766 }}/portfolio-frontend
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-frontend
 
       - name: Push backend
-        run: docker push ${{ secrets.siddhantpatel766 }}/portfolio-backend
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-backend
 
       - name: Push admin
-        run: docker push ${{ secrets.siddhantpatel766 }}/portfolio-admin
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-admin
